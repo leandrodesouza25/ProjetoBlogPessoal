@@ -28,7 +28,7 @@ public class Tema {
 	//Foreign Key
 	@OneToMany(mappedBy = "tema" , cascade = CascadeType.ALL)
      @JsonIgnoreProperties("tema")
-	private List<Postagens> postagem;
+	private List<Postagens> postagens;
 	
 	
 	
@@ -45,11 +45,11 @@ public class Tema {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public List<Postagens> getPostagem() {
-		return postagem;
+	public List<Postagens> getPostagens() {
+		return postagens;
 	}
-	public void setPostagem(List<Postagens> postagem) {
-		this.postagem = postagem;
+	public void setPostagens(List<Postagens> postagens) {
+		this.postagens = postagens;
 	}
 	
 }

@@ -20,7 +20,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
+	public Usuario cadastrarUsuario(Usuario usuario) {
 		
 		
 		if(usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
@@ -31,7 +31,7 @@ public class UsuarioService {
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
 
-		return Optional.of(usuarioRepository.save(usuario));
+		return (usuarioRepository.save(usuario));
 	}
 
 	
@@ -70,6 +70,9 @@ public class UsuarioService {
 				usuarioLogin.get().setToken(authHeader);				
 				usuarioLogin.get().setNome(usuario.get().getNome());
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
+				usuarioLogin.get().setFoto(usuario.get().getFoto());
+				usuarioLogin.get().setTipo(usuario.get().getTipo());
+				
 				
 				return usuarioLogin;
 

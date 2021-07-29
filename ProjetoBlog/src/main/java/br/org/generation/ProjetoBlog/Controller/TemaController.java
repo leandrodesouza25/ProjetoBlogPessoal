@@ -1,4 +1,4 @@
-package br.org.generation.ProjetoBlog.Controller;
+package br.org.generation.ProjetoBlog.controller;
 
 import java.util.List;
 import java.util.Optional;

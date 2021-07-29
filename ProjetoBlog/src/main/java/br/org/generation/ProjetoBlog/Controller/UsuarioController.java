@@ -1,4 +1,4 @@
-package br.org.generation.ProjetoBlog.Controller;
+package br.org.generation.ProjetoBlog.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -49,9 +49,9 @@ public class UsuarioController {
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) {
-		Optional<Usuario> novoUsuario = usuarioService.cadastrarUsuario(usuario);
+		Usuario novoUsuario = usuarioService.cadastrarUsuario(usuario);
 		try {
-				return ResponseEntity.ok(novoUsuario.get());
+				return ResponseEntity.ok(novoUsuario);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
